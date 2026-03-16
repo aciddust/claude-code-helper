@@ -1,0 +1,20 @@
+{
+  "chat.tools.terminal.autoApprove": {
+    "/^cat ~/\\.claude/plugins/installed_plugins\\.json \\| python3 -m json\\.tool 2>/dev/null \\|\\| cat ~/\\.claude/plugins/installed_plugins\\.json$/": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "/^cat ~/\\.claude/plugins/installed_plugins\\.json \\| python3 -c \"import json,sys; d=json\\.load\\(sys\\.stdin\\); \\[print\\(k, '->', v\\.get\\('path',''\\)\\) for k,v in d\\.items\\(\\) if isinstance\\(v,dict\\)\\]\" 2>/dev/null \\|\\| python3 -c \"import json; d=json\\.load\\(open\\(str\\('\\$HOME'\\)\\+'/\\.claude/plugins/installed_plugins\\.json'\\)\\); print\\(json\\.dumps\\(list\\(d\\.keys\\(\\)\\)\\[:5\\], indent=2\\)\\)\"$/": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "/^python3 -c \"\nimport json\nd = json\\.load\\(open\\('\\$HOME/\\.claude/plugins/installed_plugins\\.json'\\)\\)\nplugins = d\\.get\\('plugins', d\\)\nif isinstance\\(plugins, list\\):\n    for p in plugins\\[:10\\]:\n        print\\(json\\.dumps\\(p, ensure_ascii=False, indent=2\\)\\)\nelif isinstance\\(plugins, dict\\):\n    for k,v in list\\(plugins\\.items\\(\\)\\)\\[:5\\]:\n        print\\(k, '->', json\\.dumps\\(v, ensure_ascii=False\\)\\[:200\\]\\)\n\"$/": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "/^python3 -c \"\nimport json\nd = json\\.load\\(open\\('\\$HOME/\\.claude/plugins/installed_plugins\\.json'\\)\\)\nplugins = d\\.get\\('plugins', d\\)\nfor k,v in plugins\\.items\\(\\):\n    if 'helper' in k\\.lower\\(\\):\n        print\\(k, '->', json\\.dumps\\(v, ensure_ascii=False\\)\\[:400\\]\\)\n\" && echo \"---\" && ls ~/\\.claude/plugins/cache/ \\| grep -i helper 2>/dev/null \\|\\| echo \"no helper\"$/": {
+      "approve": true,
+      "matchCommandLine": true
+    }
+  }
+}

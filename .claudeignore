@@ -1,0 +1,17 @@
+# 플러그인 런타임 데이터 — 사용자 프로젝트에 생성되는 파일들
+# (플러그인 패키지에는 포함되지 않음)
+
+# 프로젝트 런타임 상태 마커
+.claude/.initialized
+.claude/.setup-in-progress
+
+# 사용자 프로젝트 문서 (플러그인 설치로 생성되는 산출물)
+docs/plans/
+docs/logs/
+docs/reports/
+
+# Demo 빌드 산출물
+demos/assets/*.gif
+
+# OS
+.DS_Store

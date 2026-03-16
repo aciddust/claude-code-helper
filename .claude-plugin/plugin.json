@@ -1,0 +1,10 @@
+{
+  "name": "helper",
+  "version": "1.0.0",
+  "description": "/setup 오버라이드 방식의 워크플로우 자동화 플러그인. 계획 수립 강제, 변경 로그 자동화, 품질 검사, 5단계 프로젝트 초기화를 제공합니다.",
+  "author": {
+    "name": "d3fau1t"
+  },
+  "license": "MIT",
+  "keywords": ["workflow", "planning", "quality", "hooks", "setup"]
+}
